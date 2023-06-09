@@ -1,0 +1,21 @@
+{
+    "require": {
+        "altorouter/altorouter": "dev-master",  
+        "usmanhalalit/pixie": "dev-master",
+        "paragonie/random_compat": "^2.0",
+        "defuse/php-encryption": "^2.0",
+        "gettext/gettext": "^4.8",        
+        "phpmailer/phpmailer": "^6.5",
+        "ext-gd": "*",
+        "claviska/simpleimage": "dev-master",
+        "league/color-extractor": "^0.4.0",
+        "php-ffmpeg/php-ffmpeg": "dev-master",
+		    "fightbulc/moment": "dev-master"	
+    },
+    "repositories": [
+        {
+            "url": "https://github.com/fightbulc/moment.php.git",
+            "type": "git"
+        }
+    ]
+}
