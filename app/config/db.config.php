@@ -6,7 +6,7 @@ define("DB_HOST", "localhost");
 define("DB_NAME", "php");
 define("DB_USER", "root");
 define("DB_PASS", "");
-define("DB_ENCODING", "utf8");
+define("DB_ENCODING", "utf8mb4");
 // DB connnection charset
 /**
  * Define DB tables

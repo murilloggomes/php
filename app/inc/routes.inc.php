@@ -15,6 +15,7 @@ foreach (Config::get("applangs") as $l) {
 $langslug = $langs ? "[".implode("|", $langs).":lang]" : "";
 
 
+
 /**
  * Routa MVC
 **/
@@ -24,9 +25,22 @@ App::addRoute("GET|POST", "/index/?", "Index");
 
 //login
 App::addRoute("GET|POST", "/", "Login");
+App::addRoute("GET|POST", "/".$langslug."?/?", "Login");
+App::addRoute("GET|POST", "/".$langslug."?/login/?", "Login");
 
 // Logout
 App::addRoute("GET", "/logout/?", "Logout");
+App::addRoute("GET", "/".$langslug."?/logout/?", "Logout");
+
+// Settings
+$settings_pages = [
+    "site", "logotype", "other", "experimental",
+    "google-analytics", "google-drive", "dropbox", "onedrive", "paypal", "stripe", "facebook", "recaptcha",
+    "proxy",
+  
+    "notifications", "smtp"
+  ];
+  App::addRoute("GET|POST", "/settings/[".implode("|", $settings_pages).":page]?/?", "Settings");
 
 // Produtos
 App::addRoute("GET|POST", "/produtos/?", "Produtos");

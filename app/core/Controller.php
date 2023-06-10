@@ -91,7 +91,8 @@ class Controller
 
         require_once $path;
     }
-  
+
+
     /**
      * Set new variable for view.
      * @param string $name  Name of the variable.
@@ -113,6 +114,27 @@ class Controller
     {
         return isset($this->variables[$name]) ? $this->variables[$name] : null;
     }
+    
+  /**
+     * Create database connection
+     * @return App 
+     */
+    public function logs($idUser, $situacao, $pagina, $msg)
+    {        
+      // Pegar Model dos Logs
+      $Log = Controller::model("Log");
+      
+      $Log->set("id_user", $idUser)
+          ->set("situacao", $situacao)
+          ->set("pagina", $pagina)
+          ->set("detalhes", $msg);
+      
+      $Log->save();
+      
+      return;
+    }       
+  
+  
 
 
     /**
